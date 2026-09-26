@@ -14,6 +14,7 @@ Business Entity Resolution submission workspace, arranged to match the official 
 | `output/` | Destination for the two validated submission TSVs |
 | `Documentation_template.md` | Official methodology template to complete |
 | `HANDOFF.md` | Current project state and execution guidance |
+| `PLAN.md` | Plain-language MacBook execution and submission plan |
 | `executable.zip` | Code-only macOS transfer package; extract and run `bash run.sh` |
 
 ## Quick start
