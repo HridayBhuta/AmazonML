@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Private competition data and generated working state
+dataset/
+student_resource/dataset/
+work/
+runs/
+logs/
+evidence/
+tmp/
+
+# Local state and packaged archives
+RUN_STATE.json
+STATUS.md
+*.zip
+
+# Editors and operating systems
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
