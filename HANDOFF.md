@@ -1,14 +1,14 @@
 # HANDOFF — Amazon ML Challenge 2026 (execute autonomously)
 
-> **UPDATE, 26 Sep 2026 ~19:30 IST. This supersedes §3 and §4 below.** A complete, tested,
+> **UPDATE, 26 Sep 2026 ~19:55 IST. This supersedes §3 and §4 below.** A complete, tested,
 > memory-safe pipeline for a MacBook (M-series) now exists:
 >
-> - **Code only:** `D:\Amazon_ML\amazon_ml_er_mac.zip` (56 KB).
-> - **Code plus the official data zip, one file:** `D:\Amazon_ML\amazon_ml_er_mac_WITH_DATA.zip` (1.09 GB).
+> - **Code only:** `D:\Amazon_ML\CODE_ONLY_AmazonML_no_data.zip` (about 80 KB).
+> - **Code plus the official data zip, one file:** `D:\Amazon_ML\SEND_TO_MAC_AmazonML_code_and_data.zip` (1.09 GB).
 > - **Source folder:** `D:\Amazon_ML\mac_package\amazon_ml_er\`.
-> - **On the Mac:** unzip into the home folder, then run `bash run.sh`. That performs setup, the
+> - **On the Mac:** unzip into the home folder, then run `bash ~/AmazonML_Project/run.sh`. That performs setup, the
 >   smoke test, the baseline, finalize, the sweep, compare, and finalize of the best run.
-> - **AI agent on the Mac:** read `amazon_ml_er/AGENT_BRIEF.md`. It gives full autonomy to
+> - **AI agent on the Mac:** read `AmazonML_Project/AGENT_BRIEF.md`. It gives full autonomy to
 >   experiment, with hard rules. Start long jobs detached.
 > - **Testing:** 10/10 unit tests pass. The smoke test on real-data samples passes the official
 >   validator. An 8-agent adversarial review found 27 real defects, and all were fixed.

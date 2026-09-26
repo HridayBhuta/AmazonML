@@ -1,25 +1,26 @@
 # Amazon ML Challenge 2026
 
-Business Entity Resolution submission workspace, arranged to match the official final-package format. The repository contains the implementation, validation tooling, methodology template, handoff notes, and a ready-to-transfer macOS package.
+Business Entity Resolution submission workspace, arranged to match the official final-package format. The repository contains the current memory-safe implementation, run instructions, architecture documentation, methodology template, and a code-only macOS package.
 
 ## Repository map
 
 | Path | Purpose |
 | --- | --- |
 | `code/business_entity_resolution/` | Reproducible Python implementation |
-| `code/business_entity_resolution/src/` | Pipeline and memory-bounded audit modules |
-| `code/business_entity_resolution/tests/` | Unit tests |
-| `code/business_entity_resolution/utils/` | Official submission validator |
-| `code/business_entity_resolution/docs/` | Testing evidence and methodology notes |
+| `code/business_entity_resolution/src/` | Resumable normalization, blocking, feature, model, and reporting pipeline |
+| `code/business_entity_resolution/tests/` | Ten unit and regression tests |
+| `code/business_entity_resolution/configs/` | Experiment sweep configuration |
+| `code/business_entity_resolution/docs/` | Architecture, Q&A, and SVG diagrams |
 | `output/` | Destination for the two validated submission TSVs |
 | `Documentation_template.md` | Official methodology template to complete |
 | `HANDOFF.md` | Current project state and execution guidance |
+| `START_HERE.txt` | Short MacBook instructions |
 | `PLAN.md` | Plain-language MacBook execution and submission plan |
-| `executable.zip` | Code-only macOS transfer package; extract and run `bash run.sh` |
+| `executable.zip` | Code-only copy of `CODE_ONLY_AmazonML_no_data.zip` |
 
 ## Quick start
 
-The private dataset is intentionally excluded from Git. For the starter implementation:
+The private dataset and the 1.1 GB code-and-data transfer ZIP are intentionally excluded from Git. To check the source implementation:
 
 ```powershell
 cd code\business_entity_resolution
@@ -28,20 +29,21 @@ py -3.12 -m venv .venv
 .venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-The macOS package has the newer memory-safe workflow:
+`executable.zip` expands to `AmazonML_Project/`. It is code-only, so the official data ZIP must be placed inside that folder before running it:
 
 ```bash
 unzip executable.zip
-cd amazon_ml_er
-bash run.sh
+mv /path/to/OFFICIAL_DATA_student_resource.zip AmazonML_Project/
+bash ~/AmazonML_Project/run.sh
 ```
 
-Read `HANDOFF.md` before a full-data run. It documents the current state, resource limits, validation requirements, and work that remains.
+For the teammate transfer, use the private `SEND_TO_MAC_AmazonML_code_and_data.zip` kept outside Git. It already contains the data under the exact name expected by `PLAN.md`. Read `START_HERE.txt`, then `PLAN.md`, before the full-data run.
 
 ## Submission status
 
-- Source code, tests, official validator, and documentation template are present.
-- The code-only executable package is tracked at the repository root.
+- Current source code, ten tests, architecture docs, and the official documentation template are present.
+- The official validator is loaded from the private official resource package during execution.
+- The code-only package is tracked as `executable.zip`; its source name outside Git is `CODE_ONLY_AmazonML_no_data.zip`.
 - `output/matching_results.tsv` and `output/candidate_pairs.tsv` will be added only after a complete run passes the official validator.
 - `Documentation_template.md` still needs the real team details and measured final-run results.
 

@@ -1,0 +1,16 @@
+{
+  "note": "Run in order; each experiment reuses cached normalisation/blocking/features when those settings (and the code) are unchanged. Add or edit freely. Results go to experiments/results.tsv; `compare` picks the best untouched-holdout macro F0.5 (within 0.001 of the best, fewer candidates wins). Model-only experiments take minutes; blocking experiments (max_df/key_budget/prelim) rebuild blocking and features and take much longer.",
+  "experiments": [
+    {"name": "baseline_seed7", "overrides": {"seed": 7}, "why": "noise check: same config, different split/seed"},
+    {"name": "tol_0020", "overrides": {"recall_tol": 0.02}, "why": "smaller candidate sets (ranked higher in final review) at a recall cost"},
+    {"name": "tol_0003", "overrides": {"recall_tol": 0.003}, "why": "larger candidate sets, maximum recall ceiling"},
+    {"name": "refit", "overrides": {"refit_all": true}, "why": "train on train+valid with early-stopped rounds"},
+    {"name": "lgb_255", "overrides": {"leaves": 255, "min_leaf": 100, "lr": 0.04}, "why": "higher-capacity model"},
+    {"name": "lgb_63", "overrides": {"leaves": 63, "min_leaf": 400, "lr": 0.06}, "why": "more regularised model (France generalisation)"},
+    {"name": "more_train", "overrides": {"train_s1": 900000}, "why": "more training entities (watch RAM on 16 GB)"},
+    {"name": "no_competition_feats", "overrides": {"drop_features": "t_cnt,t_rank,t_gap,mutual_best"}, "why": "ablation: target-side competition features"},
+    {"name": "no_context_feats", "overrides": {"drop_features": "t_cnt,t_rank,t_gap,mutual_best,qrank,gap_best,gap_2nd,n_cand"}, "why": "ablation: all list-context features"},
+    {"name": "wide_blocking", "overrides": {"max_df": 600, "key_budget": 2500, "prelim": 80}, "why": "higher recall ceiling, fewer S1 without candidates (new blocking cache, slower)"},
+    {"name": "tight_blocking", "overrides": {"max_df": 150, "key_budget": 800}, "why": "cheaper blocking relying on conjunctive keys"}
+  ]
+}

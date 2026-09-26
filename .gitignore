@@ -3,15 +3,21 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .venv/
+.tools/
 
 # Private competition data and generated working state
 dataset/
-student_resource/dataset/
+student_resource/
+data/
 work/
+cache/
 runs/
+final/
 logs/
+experiments/
 evidence/
 tmp/
+*.parquet
 
 # Local state and packaged archives
 RUN_STATE.json

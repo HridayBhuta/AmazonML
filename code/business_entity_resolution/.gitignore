@@ -1,0 +1,24 @@
+# private competition data - never commit
+data/
+student_resource/
+*student_resource*.zip
+drive-download-*.zip
+*.tsv
+!configs/*.tsv
+
+# generated
+cache/
+runs/
+final/
+logs/
+experiments/
+*.parquet
+*.zip
+
+# environment
+.venv/
+.tools/
+.run.lock/
+__pycache__/
+*.pyc
+.DS_Store

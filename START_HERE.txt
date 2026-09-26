@@ -1,0 +1,85 @@
+AMAZON ML CHALLENGE 2026 - START HERE (baby steps for the Mac)
+===============================================================
+
+IMPORTANT: double-clicking run.sh does NOTHING on a Mac. That is normal.
+run.sh only works when you TYPE a command in the Terminal app (step D below).
+This START_HERE.txt and PLAN.md are only instructions to READ.
+
+
+A. PUT THE FOLDER IN THE RIGHT PLACE
+   1. Open Finder.
+   2. In the menu bar at the very top of the screen click "Go", then "Home".
+      (A folder with your user name opens - this is your Home folder.)
+   3. The folder "AmazonML_Project" must be directly inside this Home folder.
+      If it is somewhere else (Downloads, Desktop), drag it into Home.
+
+B. PLUG IN THE CHARGER and keep the lid OPEN the whole time.
+
+C. TYPE YOUR TEAM NAME (optional, can also be done later)
+   1. Open AmazonML_Project. Right-click "team_config.json" > Open With > TextEdit.
+   2. Make it look like this (keep the quotes and the curly brackets):
+        {
+          "team_name": "Our Team Name",
+          "team_members": "Name 1, Name 2, Name 3"
+        }
+   3. Press Cmd+S to save. Close TextEdit.
+
+D. START THE PROGRAM
+   1. Press Cmd + Space (a search bar appears), type:  Terminal   and press Enter.
+      A window with some text and a blinking cursor opens. This is Terminal.
+   2. Click inside that window. Type EXACTLY this line (or copy-paste it):
+
+          bash ~/AmazonML_Project/run.sh
+
+      (~ means "my Home folder". There is one space after "bash".)
+   3. Press Enter.
+
+E. WHAT YOU SHOULD SEE (within a few seconds)
+      ==================================================================
+       AMAZON ML CHALLENGE - STARTED (auto) ...
+       Keep this Terminal window OPEN and the Mac plugged in (lid open).
+      ==================================================================
+      >>> STEP 1: preparing Python (first time: 2-5 minutes, needs internet...)
+   Then many lines keep appearing ("Collecting numpy...", "[2026-...] ..." etc).
+   That is the progress. You do not need to type anything else.
+   Leave the window open. Do NOT close Terminal. You can minimise it.
+
+F. WHEN IS IT DONE?
+   - After about 2 hours a folder "final" appears inside AmazonML_Project
+     with the first files to upload (see G).
+   - It keeps improving for several more hours.
+   - Completely done when the last line says:  == finished OK
+
+   If the Mac restarts, Terminal was closed, or it stopped: just do step D again.
+   It continues where it stopped (it does not start from zero).
+
+G. UPLOAD (team leader, on Unstop)
+   Open AmazonML_Project/final/SUBMIT_THESE.txt - it names the 2 files:
+     - final/matching_results.tsv        -> leaderboard upload
+     - final/<TeamName>_submission.zip   -> final submission upload
+   Deadline: 27 Sep 2026, 11:59 PM IST (check on Unstop).
+
+PROBLEMS - what the screen says and what to do
+  "No such file or directory"
+      -> the folder is not directly in Home, or has a different name.
+         Fix step A, or use the drag method: type  bash  and a space, then drag the
+         file run.sh from Finder into the Terminal window, then press Enter.
+  "Another run is already active"
+      -> it is already running in another Terminal window. Leave that one running.
+  "Could not find the official data"
+      -> OFFICIAL_DATA_student_resource.zip must stay inside AmazonML_Project,
+         unopened and not renamed.
+  "curl: ... Could not resolve host" or download errors
+      -> the Mac has no internet. Connect to Wi-Fi and do step D again.
+  Anything else
+      -> send the newest file inside AmazonML_Project/logs/ to the team
+         (or a photo of the Terminal window).
+
+WHICH FILE IS WHAT (do NOT rename anything)
+  run.sh ................................ the program starter (started by step D)
+  RUN_ME.command ........................ same starter for double-click (macOS usually blocks it - use step D)
+  OFFICIAL_DATA_student_resource.zip .... Amazon's data - do not open, move or rename
+  team_config.json ...................... your team name (step C)
+  PLAN.md ............................... longer explanation
+  final/ (appears later) ................ THE FILES TO UPLOAD
+  logs/, runs/, cache/, data/, .venv/ ... created by the program - leave them alone
