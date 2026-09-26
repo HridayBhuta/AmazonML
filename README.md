@@ -1,36 +1,47 @@
-# Amazon ML Challenge 2026 submission repository
+# Amazon ML Challenge 2026
 
-This branch follows the official final-submission layout for the Business Entity Resolution challenge.
+Business Entity Resolution submission workspace, arranged to match the official final-package format. The repository contains the implementation, validation tooling, methodology template, handoff notes, and a ready-to-transfer macOS package.
 
-```text
-.
-├── output/
-│   ├── matching_results.tsv       # generated final predictions
-│   └── candidate_pairs.tsv        # candidates actually scored by the model
-├── code/
-│   └── business_entity_resolution/
-│       ├── src/
-│       ├── tests/
-│       ├── README.md
-│       └── requirements.txt
-└── Documentation_template.md
+## Repository map
+
+| Path | Purpose |
+| --- | --- |
+| `code/business_entity_resolution/` | Reproducible Python implementation |
+| `code/business_entity_resolution/src/` | Pipeline and memory-bounded audit modules |
+| `code/business_entity_resolution/tests/` | Unit tests |
+| `code/business_entity_resolution/utils/` | Official submission validator |
+| `code/business_entity_resolution/docs/` | Testing evidence and methodology notes |
+| `output/` | Destination for the two validated submission TSVs |
+| `Documentation_template.md` | Official methodology template to complete |
+| `HANDOFF.md` | Current project state and execution guidance |
+| `executable.zip` | Code-only macOS transfer package; extract and run `bash run.sh` |
+
+## Quick start
+
+The private dataset is intentionally excluded from Git. For the starter implementation:
+
+```powershell
+cd code\business_entity_resolution
+py -3.12 -m venv .venv
+.venv\Scripts\python.exe -m pip install -r requirements.txt
+.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-The private competition dataset is deliberately excluded. The two output TSVs are also absent until a complete pipeline run has produced and validated them; header-only or fabricated outputs are not committed as substitutes.
+The macOS package has the newer memory-safe workflow:
 
-## Current status
+```bash
+unzip executable.zip
+cd amazon_ml_er
+bash run.sh
+```
 
-- `main` was empty when this branch was created on 26 September 2026.
-- The starter implementation, tests, official validator, and official methodology template are present on this branch.
-- A full-scale, memory-safe run has not yet produced the final output files.
-- `Documentation_template.md` still contains fields that must be filled with the real team name, members, run measurements, and validation results.
+Read `HANDOFF.md` before a full-data run. It documents the current state, resource limits, validation requirements, and work that remains.
 
-## Finalization checklist
+## Submission status
 
-1. Complete and run the memory-safe pipeline against the official private dataset.
-2. Copy the validated files to `output/matching_results.tsv` and `output/candidate_pairs.tsv`.
-3. Fill every placeholder in `Documentation_template.md` with measured values.
-4. Run `code/business_entity_resolution/utils/validate_submission.py` against both outputs.
-5. Create the final ZIP with this repository's top-level layout and inspect its contents before upload.
+- Source code, tests, official validator, and documentation template are present.
+- The code-only executable package is tracked at the repository root.
+- `output/matching_results.tsv` and `output/candidate_pairs.tsv` will be added only after a complete run passes the official validator.
+- `Documentation_template.md` still needs the real team details and measured final-run results.
 
-See `code/business_entity_resolution/README.md` for the pipeline and reproduction instructions.
+The final ZIP must preserve the `output/`, `code/business_entity_resolution/`, and root documentation layout shown here. See `code/business_entity_resolution/README.md` for the full reproduction guide.

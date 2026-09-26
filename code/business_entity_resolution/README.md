@@ -156,7 +156,7 @@ The default guard refuses a run with more than 1,500,000 potential training pair
 
 ## 8. Complete the official methodology template
 
-Open the actual `student_resource/Documentation_template.md` and fill its existing sections. `methodology_notes.md` in this kit explains what this baseline does and what real measurements to insert; it is NOT a substitute official template.
+Open the actual `student_resource/Documentation_template.md` and fill its existing sections. `docs/methodology_notes.md` in this kit explains what this baseline does and what real measurements to insert; it is NOT a substitute official template.
 
 Describe your actual preprocessing, candidate-generation stages and caps, feature list, model/threshold, entity-level validation, singleton handling, country generalization, measured candidate statistics, runtime/hardware, dependencies, and external-data policy. Use values from the final selected run. Do not invent France accuracy or leaderboard numbers.
 

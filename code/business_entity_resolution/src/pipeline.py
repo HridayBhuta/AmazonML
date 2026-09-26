@@ -480,8 +480,10 @@ def package(args):
             z.write(path, code_prefix + "src/" + path.name)
         for path in sorted((root / "tests").glob("*.py")):
             z.write(path, code_prefix + "tests/" + path.name)
-        for filename in ("README.md", "requirements.txt", "LICENSE", "methodology_notes.md"):
+        for filename in ("README.md", "requirements.txt", "LICENSE"):
             z.write(root / filename, code_prefix + filename)
+        for filename in ("methodology_notes.md", "TESTING.md"):
+            z.write(root / "docs" / filename, code_prefix + "docs/" + filename)
         for filename in ("run_config.json", "validation_metrics.json", "threshold_search.tsv", "model.txt"):
             z.write(args.out / filename, code_prefix + "artifacts/" + filename)
         z.writestr(code_prefix + "REPRODUCE_THIS_RUN.md", "# Exact reproduction command\n\nRun from this code folder, with the pinned environment. Replace only the data path.\n\n```sh\n" + command + "\n```\n\nThe data SHA-256 hashes are in artifacts/run_config.json. Both outputs are regenerated in reproduced/.\n")

@@ -17,6 +17,7 @@ tmp/
 RUN_STATE.json
 STATUS.md
 *.zip
+!executable.zip
 
 # Editors and operating systems
 .DS_Store
